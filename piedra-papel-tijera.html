@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego piedra, papel o tijera</title>
+    <script>
+        //1 es piedra, 2 es papel y 3 es tijera
+
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        let jugador = 0
+        let pc = aleatorio (1,3)
+        jugador = prompt("Elige 1 para piedra, 2 para papel y 3 para tijera")
+
+        //alert("Elegiste " + jugador)
+        if(jugador == 1) {
+            alert("Elegiste 🌑")
+        } else if( jugador == 2){
+            alert("Elegiste 📋")
+        } else if (jugador == 3){
+            alert("Elegiste ✂")
+        } else {
+            alert("Selecciona una opción correcta, por favor 😅")
+        }
+
+        if(pc == 1) {
+            alert("PCIA elige 🌑")
+        } else if( pc == 2){
+            alert("PCIA elige 📋")
+        } else if (pc == 3){
+            alert("PCIA elige ✂")
+        }
+
+        //COMBATE
+        if(pc == jugador) {
+            alert("¡EMPATE! 🙀")
+        } else if(jugador == 1 && pc == 3) {
+            alert("¡GANAS! 😎")
+        } else if(jugador == 3 && pc == 1) {
+            alert("PERDISTE 😿")
+        } else if(jugador == 3 && pc == 2) {
+            alert("¡GANAS! 😎")
+        } else if(jugador == 1 && pc == 2) {
+            alert("PERDISTE 😿")
+        } else if(jugador == 2 && pc == 1) {
+            alert("¡GANAS! 😎")
+        } else if(jugador == 2 && pc == 3) {
+            alert("PERDISTE 😿")
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
