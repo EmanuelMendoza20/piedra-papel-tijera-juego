@@ -2,61 +2,54 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego piedra, papel o tijera</title>
-    <script>
-        //1 es piedra, 2 es papel y 3 es tijera
-
-        function aleatorio(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
-
-        let jugador = 0
-        let pc = aleatorio (1,3)
-        jugador = prompt("Elige 1 para piedra, 2 para papel y 3 para tijera")
-
-        //alert("Elegiste " + jugador)
-        if(jugador == 1) {
-            alert("Elegiste 🌑")
-        } else if( jugador == 2){
-            alert("Elegiste 📋")
-        } else if (jugador == 3){
-            alert("Elegiste ✂")
-        } else {
-            alert("Selecciona una opción correcta, por favor 😅")
-        }
-
-        if(pc == 1) {
-            alert("PCIA elige 🌑")
-        } else if( pc == 2){
-            alert("PCIA elige 📋")
-        } else if (pc == 3){
-            alert("PCIA elige ✂")
-        }
-
-        //COMBATE
-        if(pc == jugador) {
-            alert("¡EMPATE! 🙀")
-        } else if(jugador == 1 && pc == 3) {
-            alert("¡GANAS! 😎")
-        } else if(jugador == 3 && pc == 1) {
-            alert("PERDISTE 😿")
-        } else if(jugador == 3 && pc == 2) {
-            alert("¡GANAS! 😎")
-        } else if(jugador == 1 && pc == 2) {
-            alert("PERDISTE 😿")
-        } else if(jugador == 2 && pc == 1) {
-            alert("¡GANAS! 😎")
-        } else if(jugador == 2 && pc == 3) {
-            alert("PERDISTE 😿")
-        }
-
-        
-    </script>
+    <title>Piedra, papel o tijera</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <h1>¡Hola! ¿Jugamos piedra, papel o tijeras?</h1>
-    <p>Presiena F5 o recarga la página para volver a jugar. 😸</p>
+        <header>
+            <h1>Piedra, papel o tijera</h1>
+            <p class="subtitulo">Tercera Pre-entrega por Emanuel Mendoza</p>
+        </header>
+
+        <main>
+            <p class="instrucciones" id="instrucciones">
+                ✨¡Bienvenido!✨<br>Las reglas son sencillas; el primero en llegar a cinco puntos gana.
+            </p>
+
+            <div class="marcador">
+                <p class="nombre nombre-jugador">
+                    Jugador
+                </p>
+                <p class="nombre nombre-computadora">
+                    Computadora
+                </p>
+                <p class="puntos">
+                    <span id="puntos-usuario">0</span>
+                    <span>-</span>
+                    <span id="puntos-computadora">0</span>
+                </p>
+            </div>
+            <div class="elegi-tu-arma" id="elegi-tu-arma">
+                <h2>Elegí tu arma para el próximo turno</h2>
+                <div class="armas">
+                    <button class="arma" id="piedra 🌑">🌑</button>
+                    <button class="arma" id="papel 📋">📋</button>
+                    <button class="arma" id="tijera ✂">✂</button>
+                </div>
+            </div>
+            <div class="mensaje disabled" id="mensaje">
+                <p>
+                    Usaste <span class="eleccion" id="eleccion-usuario">papel 📋</span><br>
+                    y la computadora usó <span class="eleccion" id="eleccion-computadora">piedra 🌑</span>
+                </p>
+                <p class="mensaje-resultado" id="gana-punto">¡Ganaste un punto! 😎</p>
+            </div>
+            <button class="btn disabled" id="reiniciar">
+                Reiniciar juego
+            </button>
+        </main>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
